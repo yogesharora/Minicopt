@@ -1,0 +1,8 @@
+copt.exe
+s3.y.output
+s3.y.h
+out.asm
+cmdline.h
+cmdline.c
+s3.y.c
+s3.lex.c

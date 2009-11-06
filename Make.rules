@@ -1,0 +1,16 @@
+.SUFFIXES: .o .c .cpp .lex .y .lex.c .y.c
+
+%.o: %.cpp 
+	$(CC) -Wall -Wno-unused-function -g -O0 -c $(INCLUDE) $(CFLAGS) $(DEFS) $< -o $@
+	
+%.o: %.c 
+	$(CC) -Wall -Wno-unused-function  -g -O0 -c $(INCLUDE) $(CFLAGS) $(DEFS) $< -o $@
+
+%.lex.c: %.lex
+	$(LEX) -o$@ $<
+
+%.cpp: %.lex
+	$(LEX) -+ -o$@ $<
+
+%.y.c: %.y
+	$(YACC) --verbose -d -o$@ $<
