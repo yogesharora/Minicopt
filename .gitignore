@@ -1,3 +1,5 @@
+*.o
+*.exe
 copt.exe
 s3.y.output
 s3.y.h
